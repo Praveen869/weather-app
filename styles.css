@@ -1,0 +1,218 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #232323;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7) grayscale(0.2);
+}
+
+/* Main Container Styles */
+.container {
+    width: 90%;
+    max-width: 450px; /* Slightly larger max-width */
+    padding: 2.5rem;
+    background: rgba(200, 149, 149, 0.055); /* Darker, more translucent background */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(93, 70, 70, 0.3);
+    text-align: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #594949;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Heading Styles */
+h1 {
+    color: #a59ea8;
+    margin-bottom: 2rem;
+    font-size: 2.8rem; /* Using rem */
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    letter-spacing: 0.05em;
+}
+
+/* Input Field Styles */
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(77, 49, 49, 0.4);
+    border-radius: 10px;
+    font-size: 1.1rem; /* Using rem */
+    color: #3f3e3e;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+input[type="text"]:focus {
+    border-color: #78d2e6;
+    box-shadow: 0 0 0 4px rgba(109, 213, 237, 0.5), inset 0 2px 4px rgba(0,0,0,0.1);
+    outline: none;
+    background-color: #fff;
+}
+
+/* Button Styles */
+button {
+    background: linear-gradient(45deg, #6dd5ed 0%, #2193b0 100%);
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem; /* Using rem */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Info Section */
+#weather-info {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#weather-info.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#weather-info h2 {
+    font-size: 2rem; /* Using rem */
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+#weather-info img {
+    width: 100px; /* Base size */
+    height: 100px;
+    margin: 1rem 0;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3));
+}
+
+#weather-info p {
+    font-size: 1.2rem; /* Using rem */
+    margin: 0.5rem 0;
+    color: #f0f0f0;
+    line-height: 1.5;
+}
+
+#weather-info p:last-of-type { /* More specific selector */
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.3rem; /* Using rem */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+    h1 {
+        font-size: 2.4rem;
+    }
+    #weather-info h2 {
+        font-size: 1.8rem;
+    }
+    #weather-info p {
+        font-size: 1.1rem;
+    }
+    #weather-info p:last-of-type {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Adjust base font size for small devices */
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    input[type="text"] {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+
+    #weather-info {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    #weather-info h2 {
+        font-size: 1.6rem;
+    }
+
+    #weather-info img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #weather-info p {
+        font-size: 1rem;
+    }
+    #weather-info p:last-of-type {
+        font-size: 1.1rem;
+    }
+}
