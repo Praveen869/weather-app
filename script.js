@@ -1,7 +1,7 @@
 document.getElementById('search-btn').addEventListener('click', getWeather);
 
 async function getWeather() {
-    const apiKey = API_KEY; // Your API key is now securely stored in config.js
+    const apiKey = API_KEY; // Your API key
     const city = document.getElementById('city-input').value;
     const weatherInfo = document.getElementById('weather-info');
 
@@ -10,7 +10,7 @@ async function getWeather() {
         return;
     }
 
-    // For OpenWeatherMap (uncomment to use)
+    
      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     // For Open-Meteo (free, by lat/lon - for demo)
