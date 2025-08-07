@@ -1,5 +1,8 @@
 # Weather App
 
+![Weather App Screenshot](./screenshott.png)
+
+
 A simple and elegant web application that provides real-time weather information for any city in the world.
 
 ## Features
