@@ -1,8 +1,21 @@
 # Ignore API key configuration
-config.js
+src/js/config.js
+*.env
+*.env.local
 
 # Ignore common OS and editor files
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# Ignore node modules
+node_modules/
+.npm
+
+# Ignore build/dist files
+dist/
+build/
